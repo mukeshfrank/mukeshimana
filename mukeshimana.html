@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Mukeshimana | DevOps & Cloud Specialist</title>
+    <meta name="description" content="Professional portfolio of Frank Mukeshimana, DevOps Engineer and IT & Network Monitoring Specialist">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+        
+        [data-theme="dark"] {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #8b5cf6;
+            --dark: #f8fafc;
+            --light: #1e293b;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(248, 250, 252, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] header {
+            background-color: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        /* Hero section */
+        .hero {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--gray);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* About section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-chip {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Experience section */
+        .experience-item {
+            background-color: rgba(248, 250, 252, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        [data-theme="dark"] .experience-item {
+            background-color: rgba(30, 41, 59, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .experience-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .experience-position {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-description {
+            color: var(--gray);
+        }
+        
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: rgba(248, 250, 252, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        [data-theme="dark"] .project-card {
+            background-color: rgba(30, 41, 59, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Contact section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(37, 99, 235, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            background-color: rgba(248, 250, 252, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+        
+        [data-theme="dark"] .contact-form {
+            background-color: rgba(30, 41, 59, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            color: var(--dark);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+           
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Frank Mukeshimana</h1>
+            <h2>DevOps Engineer | IT & Network Monitoring Specialist</h2>
+            <p>I design, implement, and maintain robust cloud infrastructure and CI/CD pipelines to enable rapid, reliable software delivery while ensuring system reliability and performance.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate DevOps Engineer with expertise in cloud infrastructure, automation, and monitoring solutions. With a strong background in IT and network monitoring, I bridge the gap between development and operations to deliver scalable, reliable systems.</p>
+                    <p>My experience spans across cloud platforms (AWS, Azure, GCP), containerization (Docker, Kubernetes), infrastructure as code (Terraform, Ansible), and CI/CD pipelines. I'm also skilled in machine learning and data science, allowing me to bring unique insights to infrastructure optimization.</p>
+                    <p>When I'm not automating deployments or optimizing systems, you can find me exploring new technologies, contributing to open-source projects, or mentoring aspiring engineers.</p>
+                    <div class="skills">
+                        <span class="skill-chip">AWS</span>
+                        <span class="skill-chip">Azure</span>
+                        <span class="skill-chip">GCP</span>
+                        <span class="skill-chip">Docker</span>
+                        <span class="skill-chip">Kubernetes</span>
+                        <span class="skill-chip">Terraform</span>
+                        <span class="skill-chip">Ansible</span>
+                        <span class="skill-chip">Jenkins</span>
+                        <span class="skill-chip">GitHub Actions</span>
+                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">Bash</span>
+                        <span class="skill-chip">Prometheus</span>
+                        <span class="skill-chip">Grafana</span>
+                        <span class="skill-chip">ELK Stack</span>
+                        <span class="skill-chip">Machine Learning</span>
+                        <span class="skill-chip">Data Science</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="frank1.jpg" alt="Frank Mukeshimana" style="width:100%; height:400px; border-radius:0.5rem; object-fit:cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-company">Jali Finance</span>
+                    <span class="experience-date">2024 - Present</span>
+                </div>
+                <h3 class="experience-position">DevOps Engineer</h3>
+                <p class="experience-description">
+                    - Designing and implementing CI/CD pipelines for financial applications<br>
+                    - Managing cloud infrastructure on AWS for high-availability systems<br>
+                    - Implementing security best practices for financial data protection<br>
+                    - Automating deployment processes and monitoring solutions<br>
+                    - Collaborating with development teams to optimize workflows
+                </p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-company">Comviva Technology</span>
+                    <span class="experience-date">2023 - 2024</span>
+                </div>
+                <h3 class="experience-position">DevOps Engineer</h3>
+                <p class="experience-description">
+                    - Containerized applications using Docker and orchestrated with Kubernetes<br>
+                    - Automated deployment processes using Jenkins and GitHub Actions<br>
+                    - Set up monitoring and alerting systems for critical infrastructure<br>
+                    - Collaborated with development teams to improve deployment workflows<br>
+                    - Reduced infrastructure costs by optimizing resource allocation
+                </p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-company">Yego</span>
+                    <span class="experience-date">2020 - 2023</span>
+                </div>
+                <h3 class="experience-position">IT & Network Specialist</h3>
+                <p class="experience-description">
+                    - Managed and monitored network infrastructure for mobility services<br>
+                    - Implemented network security measures and monitoring solutions<br>
+                    - Automated routine tasks using Python and Bash scripts<br>
+                    - Provided technical support and troubleshooting for complex issues<br>
+                    - Documented network configurations and procedures
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="photo1.jpg" alt="Student-Company Connection System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Student-Company Connection System</h3>
+                        <p class="project-description">
+                            A platform connecting students directly with companies, featuring monitoring and tracking of student experiences and activities.
+                        </p>
+                        <div class="project-tech">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">Django</span>
+                            <span class="skill-chip">PostgreSQL</span>
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">Monitoring</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="photo2.jpg" alt="frank2">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Tracking Services</h3>
+                        <p class="project-description">
+                            Custom monitoring solution for tracking system performance and user activities with real-time analytics.
+                        </p>
+                        <div class="project-tech">
+                            <span class="skill-chip">Kubernetes</span>
+                            <span class="skill-chip">Prometheus</span>
+                            <span class="skill-chip">Grafana</span>
+                            <span class="skill-chip">Helm</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="photo3.jpg" alt="frank3">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Monitoring Services</h3>
+                        <p class="project-description">
+                            End-to-end pipeline for training, versioning, and deploying machine learning models with CI/CD and monitoring.
+                        </p>
+                        <div class="project-tech">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">MLflow</span>
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">GitHub Actions</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:mukeshimanafrankk1@gmail.com">mukeshimanafrankk1@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <a href="tel:+250781186407">+250 781 186 407</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/frank-mukeshimana-020550172/?originalSubdomain=rw" target="_blank">Frank Mukeshimana</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Kigali, Rwanda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="color: white;">Frank Mukeshimana</div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/frank-mukeshimana-020550172/?originalSubdomain=rw" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/yourusername" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <p class="copyright">© 2025 Frank Mukeshimana. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
