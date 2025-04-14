@@ -9,93 +9,112 @@
     <title>Frank Mukeshimana Portfolio</title>
 </head>
 <body>
+    <!-- Header -->
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
                 Frank <span>Mukeshimana</span>
             </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html" class="active">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skills.html">Skills</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="services.html">Services</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
-            </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        </div>
-        <div class="dropdown">
-            <div class="links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="skills.html">Skills</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
         </div>
     </nav>
+
+    <!-- Home Section -->
     <section id="home">
         <div class="main-container">
             <div class="image" data-aos="zoom-out" data-aos-duration="3000">
                 <img src="image/franhi.jpg" alt="Frank Image">
             </div>
             <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>Frank Mukeshimana</span></h1>
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span><label for="">|</label></div>
-                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">I am Frank Mukeshimana, an IT professional from Kigali, Rwanda, with expertise in technical support, programming, networking, and cybersecurity. With over 3 years of experience at Yego Innovision Ltd and Comviva, I excel in troubleshooting, database management, and system monitoring. I am driven, certified, and passionate about innovation.</p>
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey, I'm <span>Frank Mukeshimana</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">
+                    I'm a <span class="typewriter-text"></span><label for="">|</label>
+                </div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
+                    I am Frank Mukeshimana, an IT professional from Kigali, Rwanda, with expertise in technical support, programming, networking, and cybersecurity. With over 3 years of experience at Yego Innovision Ltd and Comviva, I excel in troubleshooting, database management, and system monitoring. I am driven, certified, and passionate about innovation.
+                </p>
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-github"></i></a>
-                    <a href="mailto:youremail@example.com" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://wa.me/yourwhatsappnumber" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://github.com/mukeshfrank" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:mukeshimanafrankk1@gmail.com" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://rw.linkedin.com/in/frank-mukeshimana-020550172" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/250781186407" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
-                    <button onclick="window.location.href='mailto:youremail@example.com';">Hire me</button>
+                    <button onclick="window.location.href='mailto:mukeshimanafrankk1@gmail.com';">Hire me</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:mukeshimanafrankk1@gmail.com">mukeshimanafrankk1@gmail.com</a></p>
+            <p>Phone/WhatsApp: <a href="tel:+250781186407">+250 781 186 407</a></p>
+            <p>LinkedIn: <a href="https://rw.linkedin.com/in/frank-mukeshimana-020550172" target="_blank">linkedin.com/in/frank-mukeshimana</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Frank Mukeshimana. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Mukeshimana Frank. All rights reserved.</p>
+            <button id="scrollToTop" onclick="scrollToTop()">↑ Back to Top</button>
+        </div>
     </footer>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({ offset: 0 });
-    </script>
-    <script>
-      function hamburg() {
-          const navbar = document.querySelector(".dropdown");
-          navbar.style.transform = "translateY(0px)";
-      }
-      function cancel() {
-          const navbar = document.querySelector(".dropdown");
-          navbar.style.transform = "translateY(-500px)";
-      }
-      const texts = ["DATA ENGINEER", "DATA SCIENTIST", "DATA ANALYST", "Technical Support"];
-      let speed = 100;
-      const textElements = document.querySelector(".typewriter-text");
-      let textIndex = 0;
-      let characterIndex = 0;
-      function typeWriter() {
-          if (characterIndex < texts[textIndex].length) {
-              textElements.innerHTML += texts[textIndex].charAt(characterIndex);
-              characterIndex++;
-              setTimeout(typeWriter, speed);
-          } else {
-              setTimeout(eraseText, 1000);
-          }
-      }
-      function eraseText() {
-          if (textElements.innerHTML.length > 0) {
-              textElements.innerHTML = textElements.innerHTML.slice(0, -1);
-              setTimeout(eraseText, 50);
-          } else {
-              textIndex = (textIndex + 1) % texts.length;
-              characterIndex = 0;
-              setTimeout(typeWriter, 500);
-          }
-      }
-      window.onload = typeWriter;
+        AOS.init({ offset: 0 });
+
+        // Scroll to Top Button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Typewriter Effect
+        const texts = [
+            "DATA ENGINEER",
+            "DATA SCIENTIST",
+            "DATA ANALYST",
+            "Technical Support",
+          
+            "MACHINE LEARNING",
+            "CLOUD COMPUTING",
+            "WEB DEVELOPER",
+            "DEVOPS",
+            "QUALITY ASSURANCE"
+        ];
+        let speed = 100;
+        const textElements = document.querySelector(".typewriter-text");
+        let textIndex = 0;
+        let characterIndex = 0;
+
+        function typeWriter() {
+            if (characterIndex < texts[textIndex].length) {
+                textElements.innerHTML += texts[textIndex].charAt(characterIndex);
+                characterIndex++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(eraseText, 1000);
+            }
+        }
+
+        function eraseText() {
+            if (textElements.innerHTML.length > 0) {
+                textElements.innerHTML = textElements.innerHTML.slice(0, -1);
+                setTimeout(eraseText, 50);
+            } else {
+                textIndex = (textIndex + 1) % texts.length;
+                characterIndex = 0;
+                setTimeout(typeWriter, 500);
+            }
+        }
+
+        window.onload = typeWriter;
     </script>
 </body>
 </html>
